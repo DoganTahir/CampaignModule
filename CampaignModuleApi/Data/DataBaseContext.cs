@@ -7,10 +7,11 @@ namespace CampaignModuleApi.Data
     {
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Product> Products { get; set; }
+        public string DbPath { get; private set; }
 
-        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
+        public DataBaseContext()
         {
-
+            DbPath = $"CampaignModule.db";
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -31,5 +32,11 @@ namespace CampaignModuleApi.Data
         {
             return Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+        }
+
     }
 }

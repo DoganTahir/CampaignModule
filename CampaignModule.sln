@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CampaignModuleSimulation", "CampaignModule\CampaignModuleSimulation.csproj", "{F89355BE-B4C9-42A1-8AAC-9019E14A9124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CampaignModuleApi", "CampaignModuleApi\CampaignModuleApi.csproj", "{DCFA9E5E-2013-4520-BEA7-027703FB8C54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampaignModuleApi", "CampaignModuleApi\CampaignModuleApi.csproj", "{DCFA9E5E-2013-4520-BEA7-027703FB8C54}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8DF0E58F-62E3-4702-893D-67BB294EA5D6}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CampaignModuleSimulation", "CampaignModuleSimulation\CampaignModuleSimulation.csproj", "{53F731CA-FA0F-4CF3-BCFD-D4047B670CAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F89355BE-B4C9-42A1-8AAC-9019E14A9124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F89355BE-B4C9-42A1-8AAC-9019E14A9124}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F89355BE-B4C9-42A1-8AAC-9019E14A9124}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F89355BE-B4C9-42A1-8AAC-9019E14A9124}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCFA9E5E-2013-4520-BEA7-027703FB8C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCFA9E5E-2013-4520-BEA7-027703FB8C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCFA9E5E-2013-4520-BEA7-027703FB8C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCFA9E5E-2013-4520-BEA7-027703FB8C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F731CA-FA0F-4CF3-BCFD-D4047B670CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F731CA-FA0F-4CF3-BCFD-D4047B670CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F731CA-FA0F-4CF3-BCFD-D4047B670CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F731CA-FA0F-4CF3-BCFD-D4047B670CAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

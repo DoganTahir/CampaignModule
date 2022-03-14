@@ -6,8 +6,6 @@ namespace CampaignModuleApi.Models.Database
     {
         public int CampaignId{get;set;}
         public string Name {get;set;}
-
-        [ForeignKey("Product")]
         public int ProductCode { get; set; }
         public Product Product { get; set; }
         public int Duration{get;set;}
