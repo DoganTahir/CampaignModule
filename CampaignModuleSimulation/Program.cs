@@ -51,6 +51,14 @@ namespace CampaignModuleSimulation
                         increase_time = increase_time.AddHours(Convert.ToInt32(command[1]));
                         Console.WriteLine("Hour:"+increase_time.ToString("hh:mm"));
                         break;
+                    case "create_order":
+                        PostOrderCreateRequest postOrderCreateRequest = new PostOrderCreateRequest();
+                        postOrderCreateRequest.ProductCode = command[1];
+                        postOrderCreateRequest.Quantity = command[2] != "" ? Convert.ToInt32(command[2]) : 0;
+                        postOrderCreateRequest.OrderTime = increase_time;
+                        var create_order = await OrderService.AddOrder(postOrderCreateRequest);
+                        Console.WriteLine(create_order);
+                        break;
                 }
             }
 

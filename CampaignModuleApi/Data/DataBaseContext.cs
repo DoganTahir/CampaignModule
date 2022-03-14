@@ -7,6 +7,8 @@ namespace CampaignModuleApi.Data
     {
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
         public string DbPath { get; private set; }
 
         public DataBaseContext()

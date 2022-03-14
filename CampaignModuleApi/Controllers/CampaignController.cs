@@ -1,4 +1,5 @@
 ﻿
+using CampaignModuleApi.BusinessServices;
 using CampaignModuleApi.Data;
 using CampaignModuleApi.Models;
 using CampaignModuleApi.Models.Database;
@@ -9,6 +10,7 @@ namespace CampaignModuleApi.Controllers
 {
     public class CampaignController : ControllerBase
     {
+        ProductBusiness productBusiness = new ProductBusiness();
 
 
         [SwaggerOperation(Summary = "Returns get by Id product", Tags = new[] { "Products" })]
@@ -63,21 +65,26 @@ namespace CampaignModuleApi.Controllers
                     {
                         ProductCode = data.ProductCode,
                         Name = data.Name,
+                        ManipulationLimit=data.ManipulationLimit,
+                        TargetCount=data.TargetCount,
                         CampaignStartDate = data.CampaignStartDate,
                         CampaignFinishDate = data.CampaignFinishDate,
                         CampaignStatus = 1
 
-                    });
-
-                    db.SaveChanges();
-                }
-
-
-                return Ok();
+                    });;
+                    if (productBusiness.UpdateProductPrice(data.ProductCode,data.ManipulationLimit)==true)
+                    {
+                        db.SaveChanges();
+                        return Ok();
+                    }
+                    else
+                    {
+                        return this.StatusCode(460, "Product Code Incorrect");
+                    }
+                }           
             }
             catch (Exception e )
             {
-                Console.WriteLine(e.Message);
                  return this.StatusCode(500, e.Message);
             }
 

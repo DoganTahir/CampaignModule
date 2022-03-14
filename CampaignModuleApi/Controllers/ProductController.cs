@@ -53,6 +53,7 @@ namespace CampaignModuleApi.Controllers
                 {
                     ProductCode = data.ProductCode,
                     Price = data.Price,
+                    DiscountedPrice=data.Price,
                     Stock = data.Stock,
                     ProductStatus = 1
     
