@@ -13,7 +13,6 @@ namespace CampaignModuleSimulation
             ApiHelper.InitializeClient();
 
             DateTime increase_time = new DateTime();
-            increase_time=increase_time.AddHours(5);
             Console.WriteLine(increase_time);
             foreach (string line in lines)
             {
@@ -30,11 +29,27 @@ namespace CampaignModuleSimulation
                         Console.WriteLine(postproduct);
                         break;
                     case "create_campaign":
-                        Console.WriteLine("Kampanya oluşturuldu");
-                        break;
+                        PostCampaignCreateRequest campaignModel = new PostCampaignCreateRequest();
+                        campaignModel.Name = command[1];
+                        campaignModel.ProductCode = command[2];
+                        campaignModel.CampaignStartDate = increase_time;
+                        campaignModel.CampaignFinishDate = increase_time.AddHours(Convert.ToInt32(command[3]));
+                        campaignModel.ManipulationLimit =Convert.ToInt32(command[4]);
+                        campaignModel.TargetCount = Convert.ToInt32(command[5]);
+                        campaignModel.CampaignStatus =1 ;
+                        var postCampaign= await CampaignServiceCall.AddCampaign(campaignModel);
+                        Console.WriteLine(postCampaign); break;
                     case "get_product_info":
                         var getproduct = await ProductServiceCall.GetProductById(command[1]);
                         Console.WriteLine(line+'='+getproduct);
+                        break;
+                    case "get_campaign_info":
+                        var getCampaign = await CampaignServiceCall.GetCampaignByName(command[1]);
+                        Console.WriteLine(line + '=' + getCampaign);
+                        break;
+                    case "increase_time":
+                        increase_time = increase_time.AddHours(Convert.ToInt32(command[1]));
+                        Console.WriteLine("Hour:"+increase_time.ToString("hh:mm"));
                         break;
                 }
             }

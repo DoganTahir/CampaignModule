@@ -2,5 +2,8 @@ create_product P1 100 1000
 create_campaign C1 P1 5 20 100 
 get_product_info P1
 increase_time 1 
+create_campaign C2 P1 5 20 100 
 get_product_info P1
-increase_time 1 
+increase_time 1
+create_campaign C3 P1 5 20 100 
+

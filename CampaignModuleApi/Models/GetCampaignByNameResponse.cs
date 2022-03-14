@@ -1,8 +1,6 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CampaignModuleApi.Models.Database
+﻿namespace CampaignModuleApi.Models
 {
-    public class Campaign
+    public class GetCampaignByNameResponse
     {
         public int CampaignId { get; set; }
         public string Name { get; set; }
@@ -13,8 +11,6 @@ namespace CampaignModuleApi.Models.Database
         public DateTime CampaignStartDate { get; set; }
         public DateTime CampaignFinishDate { get; set; }
         public decimal Turnover { get; set; }
-        public int CampaignStatus { get; set; }
-
-
+        public string CampaignStatus { get; set; }
     }
 }

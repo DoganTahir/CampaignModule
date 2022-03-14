@@ -42,11 +42,9 @@ namespace CampaignModuleApi.Controllers
             }
         }
 
-
-
         [SwaggerOperation( Summary = "Adds new Product",Tags = new[] { "Product" } )]
         [HttpPost("/products")]
-        [SwaggerResponse(200, "Success, sources is created successfully", typeof(void))]
+        [SwaggerResponse(200, "Product, sources is created successfully", typeof(void))]
         public IActionResult Post([FromBody] PostProductCreateRequest data)
         {
             using (var db = new DataBaseContext())
@@ -56,6 +54,7 @@ namespace CampaignModuleApi.Controllers
                     ProductCode = data.ProductCode,
                     Price = data.Price,
                     Stock = data.Stock,
+                    ProductStatus = 1
     
                 });
 
