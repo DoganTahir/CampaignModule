@@ -2,6 +2,7 @@
 using CampaignModuleApi.Models;
 using CampaignModuleSimulation.ServiceCalls;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace CampaignModuleSimulation
@@ -11,11 +12,10 @@ namespace CampaignModuleSimulation
         CampaignBusiness campaignBusiness = new CampaignBusiness();
         static async Task Main(string[] args)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Tahir\source\repos\CampaignModule\CampaignModuleSimulation\TextFile1.txt");
+            
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Tahir\source\repos\CampaignModule\CampaignModuleSimulation\Input.txt");
             ApiHelper.InitializeClient();
-
             DateTime increase_time = new DateTime();
-            Console.WriteLine(increase_time);
             foreach (string line in lines)
             {
                 string[] command = line.Split(' ');

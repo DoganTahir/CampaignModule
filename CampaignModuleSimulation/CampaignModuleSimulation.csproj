@@ -13,4 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CampaignModuleApi\CampaignModuleApi.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Input\" />
+  </ItemGroup>
 </Project>
