@@ -10,7 +10,7 @@ STEP 1 - The following command is run in the folder where the Docker Compose Fil
 Docker compose up --build
 
 ```
-STEP 2 - Input commands are added to the Input.txt file in the CampaignModuleSimulation project.Commands must be entered in the following format.
+STEP 2 - Input commands are added to the Input.txt file in the Defaulth Path:C:\Input.txt".Commands must be entered in the following format.
 ```go
 create_product PRODUCTCODE PRICE STOCK
 get_product_info PRODUCTCODE
