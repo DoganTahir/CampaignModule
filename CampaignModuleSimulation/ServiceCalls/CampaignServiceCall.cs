@@ -1,4 +1,7 @@
-﻿using CampaignModuleApi.Models;
+﻿using CampaignModuleApi.BusinessServices;
+using CampaignModuleApi.Data;
+using CampaignModuleApi.Models;
+using CampaignModuleApi.Models.Database;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +14,8 @@ namespace CampaignModuleSimulation.ServiceCalls
 {
     public class CampaignServiceCall
     {
+        CampaignBusiness campaignBusiness = new CampaignBusiness();
+
         public static async Task<string> AddCampaign(PostCampaignCreateRequest CampaignModelRequest)
         {
             try
@@ -59,5 +64,6 @@ namespace CampaignModuleSimulation.ServiceCalls
                 return null;
             }
         }
+
     }
 }

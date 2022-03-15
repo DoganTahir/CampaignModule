@@ -1,4 +1,5 @@
-﻿using CampaignModuleApi.Models;
+﻿using CampaignModuleApi.BusinessServices;
+using CampaignModuleApi.Models;
 using CampaignModuleSimulation.ServiceCalls;
 using System;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ namespace CampaignModuleSimulation
 {
     internal class Program
     {
+        CampaignBusiness campaignBusiness = new CampaignBusiness();
         static async Task Main(string[] args)
         {
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Tahir\source\repos\CampaignModule\CampaignModuleSimulation\TextFile1.txt");
@@ -49,6 +51,7 @@ namespace CampaignModuleSimulation
                         break;
                     case "increase_time":
                         increase_time = increase_time.AddHours(Convert.ToInt32(command[1]));
+                        //var result = campaignBusiness.CheckCampaignTime(increase_time);
                         Console.WriteLine("Hour:"+increase_time.ToString("hh:mm"));
                         break;
                     case "create_order":
